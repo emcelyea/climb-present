@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page 8</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+	<div class="center">
+		<h1>Back to Stone Face</h1>
+	</div>
+	<div class="col center">
+		<h3>Spoiler, I didn't do it.</h3>
+		<video width="500" height="300" controls>
+		  <source src="videos/failure_last.mp4" type="video/mp4">
+		</video>
+		<ol class="med-list">
+			<li>Definitely just lacking endurance to pull off the entire climb in one go.</li>
+			<li>I'll be back.</li>
+			<li>Excuses: New girlfriend, bad conditions, it was smoky, it was hot, I hurt my finger</li>
+		</ol>
+	</div>
+	<script type="text/javascript">
+		var page = 8;
+		if (page > 1) {
+			addNavigationButton(page - 1, 'Prev');
+		}
+		addNavigationButton(page + 1, 'Next');
+
+		function addNavigationButton(page, label) {
+			var navElem = document.createElement('a');
+			navElem.href = 'page_' + page + '.html';
+			navElem.innerText = label;
+			navElem.className = label === 'Prev' ? 'navigation-left' : 'navigation-right';
+			document.body.appendChild(navElem);
+		}
+		document.body.addEventListener('keyup', e => {
+			if (e.key === 'ArrowRight') {
+				location.href = 'page_' + (page + 1) + '.html'
+			}
+			if (e.key === 'ArrowLeft') {
+				location.href = 'page_' + (page - 1) + '.html'
+			}
+		});
+	</script>
+</body>
+</html>

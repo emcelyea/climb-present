@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page 9</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+	<div class="center">
+		<h1>Summary</h1>
+	</div>
+	<div class="col center">
+		<h3>What makes Climbing great?</h3>
+		<ol class="med-list">
+			<li>As an exercise: forces you to use your body effectively as a single unit</li>
+			<li>Good excuse to go sit outside somewhere</li>
+			<li>When gym is open, its social and fun to solve problems together.</li>
+		</ol>
+		<h3>Why work so hard at it?</h3>
+		<img src="images/air-alert.png" style="width:auto;height:200px"/>
+
+	</div>
+	<script type="text/javascript">
+		var page = 9;
+		if (page > 1) {
+			addNavigationButton(page - 1, 'Prev');
+		}
+		addNavigationButton(page + 1, 'Next');
+
+		function addNavigationButton(page, label) {
+			var navElem = document.createElement('a');
+			navElem.href = 'page_' + page + '.html';
+			navElem.innerText = label;
+			navElem.className = label === 'Prev' ? 'navigation-left' : 'navigation-right';
+			document.body.appendChild(navElem);
+		}
+		document.body.addEventListener('keyup', e => {
+			if (e.key === 'ArrowRight' && page < 9) {
+				location.href = 'page_' + (page + 1) + '.html'
+			}
+			if (e.key === 'ArrowLeft') {
+				location.href = 'page_' + (page - 1) + '.html'
+			}
+		});
+	</script>
+</body>
+</html>
